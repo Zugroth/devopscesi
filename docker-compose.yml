@@ -1,13 +1,12 @@
 version: "3.6"
 
 volumes:
-    prometheus_data: {}
-
+  prometheus_data: {}
 
 services:
   api:
-    image: cesi    
-ports:
+    image: cesi
+    ports:
       - 3000:3000
     networks:
       - prometheus
@@ -28,7 +27,7 @@ ports:
       - 3001:3000
     networks:
       - prometheus
+
 networks:
   prometheus:
     driver: bridge
-    name: cesi-prometheus
